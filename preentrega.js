@@ -1,86 +1,47 @@
-console.log("Bienvenido a la calculadora de cuotas");
-
-
-
-let ingreseValorPrestamo = parseFloat(
-  prompt("Ingrese importe del prestamo: $")
-);
-console.log("El monto que eligio es $" + ingreseValorPrestamo);
-
-let ingreseNumeroDeCuotas = prompt("Ingrese el numero de cuotas: 3, 6, 9 o 12");
-
-if (ingreseNumeroDeCuotas == 3) {
-  console.log(
-    "El valor de la cuota es de $" +
-      (ingreseValorPrestamo / 3 + ingreseValorPrestamo * 0.05)
-  );
-} else if (ingreseNumeroDeCuotas == 6) {
-  console.log(
-    "El valor de la cuota es de $" +
-      (ingreseValorPrestamo / 6 + ingreseValorPrestamo * 0.05)
-  );
-} else if (ingreseNumeroDeCuotas == 9) {
-  console.log(
-    "El valor de la cuota es de $" +
-      (ingreseValorPrestamo / 9 + ingreseValorPrestamo * 0.05)
-  );
-} else if (ingreseNumeroDeCuotas == 12) {
-  console.log(
-    "El valor de la cuota es de $" +
-      (ingreseValorPrestamo / 12 + ingreseValorPrestamo * 0.06)
-  );
-} else {
-  alert("ingresa valores validos");
+function Consolas(nombre, precio, categoria) {
+  this.nombre = nombre;
+  this.precio = precio;
+  this.categoria = categoria;
 }
 
+const Playstation5 = new Consolas("Playstation 5", 1500000, "consola");
+const XboxSeriesX = new Consolas("Xbox Series X", 1400000, "consola");
+const NintendoSwitch = new Consolas("Nintendo Switch", 800000, "consola");
 
-function procesoCompleto() { let ingreseValorPrestamo = parseFloat(
-    prompt("Ingrese importe del prestamo: $")
+const productos = {
+  1: Playstation5,
+  2: XboxSeriesX,
+  3: NintendoSwitch,
+};
+
+let valorTotal = 0;
+
+function seleccionarProducto() {
+  let ingresaProducto = parseFloat(
+    prompt(
+      "Elegí el producto que querés comprar: 1: Playstation, 2: Xbox Series X, 3: Nintendo Switch, Ingrese el número del producto o 0 para finalizar"
+    )
   );
-  console.log("El monto que eligio es $" + ingreseValorPrestamo);
-  
-  let ingreseNumeroDeCuotas = prompt("Ingrese el numero de cuotas: 3, 6, 9 o 12");
-  
-  if (ingreseNumeroDeCuotas == 3) {
-    console.log(
-      "El valor de la cuota es de $" +
-        (ingreseValorPrestamo / 3 + ingreseValorPrestamo * 0.05)
+
+  while (ingresaProducto !== 0) {
+    const producto = productos[ingresaProducto];
+    if (producto) {
+      valorTotal += producto.precio;
+      console.log(
+        "El valor de la" + producto.nombre + "es de: $" + producto.precio
+      );
+    } else {
+      console.error("No ingresaste un producto válido");
+    }
+
+    ingresaProducto = parseFloat(
+      prompt(
+        "Desea agregar otro producto? 1: Playstation 5, 2: Xbox Series X, 3: Nintendo Switch, Ingrese el número del producto o 0 para finalizar"
+      )
     );
-  } else if (ingreseNumeroDeCuotas == 6) {
-    console.log(
-      "El valor de la cuota es de $" +
-        (ingreseValorPrestamo / 6 + ingreseValorPrestamo * 0.05)
-    );
-  } else if (ingreseNumeroDeCuotas == 9) {
-    console.log(
-      "El valor de la cuota es de $" +
-        (ingreseValorPrestamo / 9 + ingreseValorPrestamo * 0.05)
-    );
-  } else if (ingreseNumeroDeCuotas == 12) {
-    console.log(
-      "El valor de la cuota es de $" +
-        (ingreseValorPrestamo / 12 + ingreseValorPrestamo * 0.06)
-    );
-  } else {
-    alert("ingresa valores validos");
   }
 
+  console.log("El valor total de su compra es de: $" + valorTotal);
 }
 
-
-
-
-let respuesta = prompt("Desea realizar otro calculo? SI/NO");
-switch (respuesta) {
-  case "SI":
-    procesoCompleto();
-
-  case "NO":
-    break;
-
-  case (respuesta != "SI", "NO"):
-    alert("No ingreso un comando valido") + procesoCompleto();
-
-  default:
-    alert("No ingreso un valor valido") + procesoCompleto();
-}
+seleccionarProducto();
