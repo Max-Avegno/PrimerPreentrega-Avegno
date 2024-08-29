@@ -7,41 +7,91 @@ function Consolas(nombre, precio, categoria) {
 const Playstation5 = new Consolas("Playstation 5", 1500000, "consola");
 const XboxSeriesX = new Consolas("Xbox Series X", 1400000, "consola");
 const NintendoSwitch = new Consolas("Nintendo Switch", 800000, "consola");
+const Sega = new Consolas("Sega Genesis", 120000, "consola");
 
-const productos = {
-  1: Playstation5,
-  2: XboxSeriesX,
-  3: NintendoSwitch,
-};
+let contenedoresProductos =
+  document.getElementsByClassName("contenedorProducto");
 
+const productos = [Playstation5, XboxSeriesX, NintendoSwitch, Sega];
+let carrito = [];
 let valorTotal = 0;
 
-function seleccionarProducto() {
-  let ingresaProducto = parseFloat(
-    prompt(
-      "Elegí el producto que querés comprar: 1: Playstation, 2: Xbox Series X, 3: Nintendo Switch, Ingrese el número del producto o 0 para finalizar"
-    )
-  );
+document.addEventListener("DOMContentLoaded", function () {
+  let contenedorProductos = document.getElementById("contenedorProductos");
 
-  while (ingresaProducto !== 0) {
-    const producto = productos[ingresaProducto];
-    if (producto) {
-      valorTotal += producto.precio;
-      console.log(
-        "El valor de la" + producto.nombre + "es de: $" + producto.precio
-      );
-    } else {
-      console.error("No ingresaste un producto válido");
-    }
+  productos.forEach((producto) => {
+    let productoDiv = document.createElement("div");
+    productoDiv.className = "producto";
 
-    ingresaProducto = parseFloat(
-      prompt(
-        "Desea agregar otro producto? 1: Playstation 5, 2: Xbox Series X, 3: Nintendo Switch, Ingrese el número del producto o 0 para finalizar"
-      )
-    );
-  }
+    let nombreP = document.createElement("h3");
+    nombreP.innerHTML = ` ${producto.nombre}`;
 
-  console.log("El valor total de su compra es de: $" + valorTotal);
+    let precioP = document.createElement("p");
+    precioP.innerHTML = `Precio: $${producto.precio}`;
+
+    let categoriaP = document.createElement("p");
+    categoriaP.innerHTML = `Categoría: ${producto.categoria}`;
+
+    let botonAgregar = document.createElement("button");
+    botonAgregar.className = "botonCarrito";
+    botonAgregar.innerHTML = `agregar producto`;
+
+    let botonSacar = document.createElement("button");
+    botonSacar.className = "botonQuitar";
+    botonSacar.innerHTML = `eliminar producto`;
+
+    botonAgregar.addEventListener("click", function () {
+      respuestaClick(producto);
+    });
+
+
+    botonSacar.addEventListener("click", function () {
+      respuestaClickSacar(producto);
+    });
+
+
+
+
+
+    productoDiv.appendChild(nombreP);
+    productoDiv.appendChild(precioP);
+    productoDiv.appendChild(categoriaP);
+    productoDiv.appendChild(botonAgregar);
+    productoDiv.appendChild(botonSacar);
+
+    contenedorProductos.appendChild(productoDiv);
+  });
+});
+
+const botonCarrito = document.getElementById("carrito");
+
+let guardarCarrito = document.createElement("button");
+guardarCarrito.innerHTML = `Guardar en carrito`; 
+
+botonCarrito.appendChild (guardarCarrito);
+
+guardarCarrito.addEventListener("click", function () {
+  localStorage.setItem("valorTotal", JSON.stringify(`$ ${valorTotal}`));
+  alert("Carrito guardado en localStorage.");
+});
+
+
+
+
+function respuestaClick(producto) {
+  valorTotal += producto.precio;
+
+  actualizarTotal();
 }
 
-seleccionarProducto();
+function respuestaClickSacar(producto) {
+  valorTotal -= producto.precio;
+
+  actualizarTotal();
+}
+
+function actualizarTotal() {
+  let totalCompra = document.getElementById("totalCompra");
+  totalCompra.innerHTML = `El valor total es $${valorTotal}`;
+}
+
