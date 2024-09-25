@@ -3,26 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./estilos.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <link rel="stylesheet" href="./estilos.css" />
+    
+    
     <title>Curso Javascript</title>
   </head>
-  <body>
-    <head>
-      <h1>Productos</h1>
-    </head>
+  <body id="principal">
+    <header id="encabezado">
+      <h1 id="titulo">Tienda Gaming</h1>
 
-    <main>
-      
+    </header>
 
+    <main id="contenedorPrincipal">
       <div id="contenedorProductos" class="contenedorProducto"></div>
-      <div id="totalCompra">El valor total es $0</div>
-      <div id="carrito"></div>
 
-    
+      <div id="muestraCarrito">
+        <div id="carritoCompleto"></div>
+        <div id="totalCompra">El valor total es $0</div>
+        <div id="guardar"></div>
+      </div>
     </main>
 
-    <footer></footer>
+    <footer id="pie"></footer>
 
     <script src="./preentrega.js"></script>
+    <script src="./productos.json"></script>
   </body>
 </html>

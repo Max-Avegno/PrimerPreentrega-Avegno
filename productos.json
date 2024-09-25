@@ -1,0 +1,68 @@
+[
+    {
+        "id_producto": 1,
+        "nombre": "Playstation 5",
+        "descripcion": "Consola de videojuegos",
+        "precio": 1300000,
+        "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_821666-MLA74019269225_012024-T.webp",
+        "stock": 20
+        
+    },
+    {
+        "id_producto": 2,
+        "nombre": "Playstation 4",
+        "descripcion": "Consola de videojuegos",
+        "precio": 700000,
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_685737-MLA74782362181_022024-O.webp",
+        "stock": 30
+    },
+    {
+        "id_producto": 3,
+        "nombre": "Xbox series X",
+        "descripcion": "Consola de videojuegos",
+        "precio": 1350000,
+        "imagen": "https://cms-assets.xboxservices.com/assets/bc/40/bc40fdf3-85a6-4c36-af92-dca2d36fc7e5.png?n=642227_Hero-Gallery-0_A1_857x676.png",
+        "stock": 20
+    },
+    {
+        "id_producto": 4,
+        "nombre": "Xbox series S",
+        "descripcion": "Consola de videojuegos",
+        "precio": 600000,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdukz-Tos25AxRF5LJQUha_wb96eiWQXSpjA&s",
+        "stock": 10
+    },
+    {
+        "id_producto": 5,
+        "nombre": "Nintendo switch",
+        "descripcion": "Consola de videojuegos",
+        "precio": 800000,
+        "imagen": "https://http2.mlstatic.com/D_Q_NP_803086-MLA47920649105_102021-O.webp",
+        "stock": 50
+    },
+    {
+        "id_producto": 6,
+        "nombre": "Nintendo 3Ds",
+        "descripcion": "Consola de videojuegos",
+        "precio": 300000,
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_638260-MLU78188702515_082024-O.webp",
+        "stock": 20
+    },
+    {
+        "id_producto": 7,
+        "nombre": "Sega minidrive",
+        "descripcion": "Consola de videojuegos",
+        "precio": 300000,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7AeZ2Bfum3kUWEbNkwaRyn1IJlnk6nxjTFA&s",
+        "stock": 90
+    },
+    {
+        "id_producto": 8,
+        "nombre": "Sega dreamcast",
+        "descripcion": "Consola de videojuegos",
+        "precio": 200000,
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_606592-MLA78856704785_092024-O.webp",
+        "stock": 10
+        
+    }
+]

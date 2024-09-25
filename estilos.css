@@ -1,8 +1,101 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+@font-face {
+  font-family: "fuente principal";
+  src: url(./fuente/AmaticSC-Bold.ttf);
+}
+
+#principal {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  margin: 0%;
+  background-color: #6c84ac;
+
+  grid-template-columns: auto;
+  grid-template-rows: 15%, 60%, auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+#encabezado {
+  text-align: center;
+
+  grid-area: header;
+}
+
+#contenedorPrincipal {
+  display: flex;
+  grid-area: main;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#pie {
+  grid-area: footer;
+}
+
+#contenedorProductos > div {
+  height: 10%;
+}
+
 .contenedorProducto {
-    margin-bottom: 20px;
-  }
-  .producto {
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-  }
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+.producto {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#card {
+  height: 10%;
+  width: 10%;
+}
+
+.imagenCard {
+  width: 80px;
+  height: 70px;
+}
+
+p {
+  font-size: 15px;
+}
+
+h5 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.descripcion {
+  height: 100px;
+  width: 100px;
+}
+
+body > button {
+  background-color: #3173bb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  height: 50%;
+  width: 50%;
+  align-self: center;
+}
+
+.botonAgregar {
+  background-color: #3173bb;
+  color: azure;
+}
